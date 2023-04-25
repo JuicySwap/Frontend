@@ -36,7 +36,7 @@ const MenuItem: React.FC<React.PropsWithChildren<FooterProps>> = ({
   const isMounted = useIsMounted();
   return (
     <StyledFooter
-      data-theme="dark"
+      data-theme={isDark ? "dark" : "light"}
       p={["40px 16px", null, "56px 40px 32px 40px"]}
       position="relative"
       {...props}
@@ -80,8 +80,8 @@ const MenuItem: React.FC<React.PropsWithChildren<FooterProps>> = ({
             <LogoWithTextIcon width="160px" />
           </Box>
         </Flex>
-        <StyledSocialLinks order={[2]} pb={["42px", null, "32px"]} mb={["0", null, "32px"]} />
-        <StyledToolsContainer
+        {/* <StyledSocialLinks order={[2]} pb={["42px", null, "32px"]} mb={["0", null, "32px"]} /> */}
+        {/* <StyledToolsContainer
           data-theme="dark"
           order={[1, null, 3]}
           flexDirection={["column", null, "row"]}
@@ -114,7 +114,7 @@ const MenuItem: React.FC<React.PropsWithChildren<FooterProps>> = ({
               {buyCakeLabel}
             </Button>
           </Flex>
-        </StyledToolsContainer>
+        </StyledToolsContainer> */}
       </Flex>
     </StyledFooter>
   );
