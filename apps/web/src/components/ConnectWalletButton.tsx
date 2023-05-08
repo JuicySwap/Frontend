@@ -36,9 +36,10 @@ const ConnectWalletButton = ({ children, ...props }: ButtonProps) => {
 
   return (
     <>
-      <Button onClick={handleClick} {...props}>
+      <Button onClick={handleClick} height={45} {...props}>
         {children || <Trans>Connect Wallet</Trans>}
       </Button>
+
       <WalletModalV2
         docText={t('Learn How to Connect')}
         docLink={docLink}

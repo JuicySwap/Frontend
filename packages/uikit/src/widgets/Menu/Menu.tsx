@@ -31,11 +31,10 @@ const StyledNav = styled.nav`
   width: 100%;
   height: ${MENU_HEIGHT}px;
   background-color: ${({ theme }) => theme.nav.background};
-  border-bottom: 1px solid ${({ theme }) => theme.colors.cardBorder};
   transform: translate3d(0, 0, 0);
 
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: 28px;
+  padding-right: 28px;
 `;
 
 const FixedContainer = styled.div<{ showMenu: boolean; height: number }>`
@@ -66,6 +65,16 @@ const Inner = styled.div`
   transition: margin-top 0.2s, margin-left 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   transform: translate3d(0, 0, 0);
   max-width: 100%;
+`;
+
+const BuitOn = styled.span`
+  margin-right: 54px;
+  color: ${({ theme }) => theme.colors.white};
+  font-size: 18px;
+`;
+
+const RoseTxt = styled.span`
+  color: ${({ theme }) => theme.colors.rosa }
 `;
 
 const Menu: React.FC<React.PropsWithChildren<NavProps>> = ({
@@ -147,23 +156,27 @@ const Menu: React.FC<React.PropsWithChildren<NavProps>> = ({
               <Flex>
                 <Logo href={homeLink?.href ?? "/"} />
                 <AtomBox display={{ xs: "none", md: "block" }}>
-                  <MenuItems items={links} activeItem={activeItem} activeSubItem={activeSubItem} ml="24px" />
+                  <MenuItems items={links} activeItem={activeItem} activeSubItem={activeSubItem} ml="55px" />
                 </AtomBox>
               </Flex>
               <Flex alignItems="center" height="100%">
+                <BuitOn>
+                  Buit on <RoseTxt>Kava</RoseTxt> Network
+                </BuitOn>
+
                 <AtomBox mr="12px" display={{ xs: "none", lg: "block" }}>
                   <CakePrice showSkeleton={false} cakePriceUsd={cakePriceUsd} />
                 </AtomBox>
-                <Box mt="4px">
-                  <LangSelector
-                    currentLang={currentLang}
-                    langs={langs}
-                    setLang={setLang}
-                    buttonScale="xs"
-                    color="textSubtle"
-                    hideLanguage
-                  />
-                </Box>
+                {/*<Box mt="4px">*/}
+                {/*  <LangSelector*/}
+                {/*    currentLang={currentLang}*/}
+                {/*    langs={langs}*/}
+                {/*    setLang={setLang}*/}
+                {/*    buttonScale="xs"*/}
+                {/*    color="white"*/}
+                {/*    hideLanguage*/}
+                {/*  />*/}
+                {/*</Box>*/}
                 {rightSide}
               </Flex>
             </StyledNav>

@@ -25,9 +25,9 @@ const StyledMenuItem = styled.a<StyledMenuItemProps>`
   display: flex;
   align-items: center;
 
-  color: ${({ theme, $isActive }) => ($isActive ? theme.colors.secondary : theme.colors.textSubtle)};
-  font-size: 16px;
-  font-weight: ${({ $isActive }) => ($isActive ? "600" : "400")};
+  color: ${({ theme, $isActive }) => ($isActive ? theme.colors.background : theme.colors.white)};
+  font-size: 18px;
+  font-weight: 600;
   opacity: ${({ $isDisabled }) => ($isDisabled ? 0.5 : 1)};
   pointer-events: ${({ $isDisabled }) => ($isDisabled ? "none" : "inherit")};
 
@@ -47,7 +47,7 @@ const StyledMenuItem = styled.a<StyledMenuItemProps>`
   ${({ $variant }) =>
     $variant === "default"
       ? `
-    padding: 0 16px;
+    padding: 0 22px;
     height: 48px;
   `
       : `
@@ -57,6 +57,7 @@ const StyledMenuItem = styled.a<StyledMenuItemProps>`
 
   &:hover {
     background: ${({ theme }) => theme.colors.tertiary};
+    color: ${({ theme }) => theme.colors.background};
     ${({ $variant }) => $variant === "default" && "border-radius: 16px;"};
   }
 `;

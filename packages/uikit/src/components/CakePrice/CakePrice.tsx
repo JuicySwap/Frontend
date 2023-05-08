@@ -26,7 +26,7 @@ const PriceLink = styled.a`
 
 const CakePrice: React.FC<React.PropsWithChildren<Props>> = ({
   cakePriceUsd,
-  color = "textSubtle",
+  color = "white",
   showSkeleton = true,
 }) => {
   return cakePriceUsd ? (
@@ -35,7 +35,7 @@ const CakePrice: React.FC<React.PropsWithChildren<Props>> = ({
       target="_blank"
     >
       <LogoRound width="24px" mr="8px" />
-      <Text color={color} bold>{`$${cakePriceUsd.toFixed(3)}`}</Text>
+      <Text color={color}>{`$${cakePriceUsd.toFixed(3)}`}</Text>
     </PriceLink>
   ) : showSkeleton ? (
     <Skeleton width={80} height={24} />
